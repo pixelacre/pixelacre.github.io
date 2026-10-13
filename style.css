@@ -229,7 +229,7 @@ main { padding: 0 16px; }
   gap: 12px;
   margin-top: 14px;
 }
-@media (min-width: 700px) { .shots { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+@media (min-width: 700px) { .shots { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
 .shots img {
   width: 100%;
   height: auto;
@@ -237,6 +237,15 @@ main { padding: 0 16px; }
   border-radius: 6px;
   background: var(--wood);
 }
+
+/* Trailer: a picture that links to YouTube (no embedded player: no third-party content or cookies on this site) */
+.trailer { position: relative; display: block; max-width: 720px; margin: 14px auto 0; border: 3px solid var(--wood-dark); border-radius: 8px; overflow: hidden; background: var(--wood); }
+.trailer img { display: block; width: 100%; height: auto; }
+.trailer .play { position: absolute; inset: 0; display: grid; place-items: center; }
+.trailer .play span { position: relative; width: 84px; height: 84px; border-radius: 50%; background: rgba(84, 51, 31, 0.88); box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3); transition: background 0.15s; }
+.trailer .play span::after { content: ""; position: absolute; left: 33px; top: 24px; border-left: 28px solid var(--paper); border-top: 18px solid transparent; border-bottom: 18px solid transparent; }
+.trailer:hover .play span, .trailer:focus-visible .play span { background: var(--amber-deep); }
+.trailer-note { text-align: center; color: var(--ink-muted); font-size: 0.95rem; margin: 10px 0 0; }
 
 .goodlist { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 10px; }
 .goodlist li { display: flex; gap: 12px; align-items: flex-start; }
